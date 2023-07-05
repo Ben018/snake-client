@@ -19,10 +19,15 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
     // added // send user name
-    conn.write(`${userName}`);
+    conn.write(`Name: ${userName}`);
+    // // move up cmd
+    // setInterval(() => {
+    //   conn.write(`Move: up`);
+    // }, 500);
   })
 
   return conn;
+
 };
 
 module.exports = { connect };
